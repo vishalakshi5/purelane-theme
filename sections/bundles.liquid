@@ -1,0 +1,57 @@
+{{ 'section-bundles.css' | asset_url | stylesheet_tag }}
+
+<section class="bundles" id="bundles">
+  <div class="bundles-head">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.subheading }}</p>
+  </div>
+
+  <div class="bundles-grid">
+    {% for block in section.blocks %}
+      <div class="bundle-tier {% if block.settings.featured %}featured{% endif %}" {{ block.shopify_attributes }}>
+        <span class="tag">{{ block.settings.tag }}</span>
+        <div class="qty">{{ block.settings.qty }}<small>Products</small></div>
+        <div class="price">{{ block.settings.price }} <s>{{ block.settings.compare_price }}</s></div>
+        <p class="per-item">{{ block.settings.per_item_note }}</p>
+        <a class="btn {% if block.settings.featured %}btn-primary{% else %}btn-ghost{% endif %}" href="{{ block.settings.link }}">
+          Build this box
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Bundles",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "One box. Every room." },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Mix and match across kitchen, laundry, home and skin." }
+  ],
+  "blocks": [
+    {
+      "type": "tier",
+      "name": "Bundle Tier",
+      "settings": [
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Starter" },
+        { "type": "text", "id": "qty", "label": "Quantity", "default": "2" },
+        { "type": "text", "id": "price", "label": "Price", "default": "₹349" },
+        { "type": "text", "id": "compare_price", "label": "Compare-at price", "default": "₹598" },
+        { "type": "text", "id": "per_item_note", "label": "Per item note", "default": "Flat ₹174 per product" },
+        { "type": "url", "id": "link", "label": "Button link" },
+        { "type": "checkbox", "id": "featured", "label": "Highlight as most popular", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundles",
+      "blocks": [
+        { "type": "tier" },
+        { "type": "tier", "settings": { "tag": "Most popular", "qty": "3", "price": "₹499", "compare_price": "₹897", "featured": true } },
+        { "type": "tier", "settings": { "tag": "Whole home", "qty": "5", "price": "₹799", "compare_price": "₹1495" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,51 @@
+body, h1, h2, h3, h4, h5, p, button, a {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+}
+
+a, button, .product-card, .combo-card, .bundle-tier, .review-card {
+  transition: all 0.25s ease;
+}
+
+.product-card:hover,
+.combo-card:hover,
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(23, 48, 31, 0.12);
+}
+
+.bundle-tier:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(23, 48, 31, 0.18);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(31, 92, 58, 0.3);
+}
+
+.btn-ghost:hover {
+  background: #1f5c3a;
+  color: #fff !important;
+}
+
+.product-card,
+.combo-card,
+.review-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.hero, .shop, .combos, .bundles, .reviews {
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

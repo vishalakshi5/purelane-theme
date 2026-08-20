@@ -1,75 +1,64 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "hero": {
+      "type": "hero"
+    },
+    "shop_grid": {
+      "type": "shop-grid",
+      "settings": {
+        "collection": "all"
+      }
+    },
+    "combos": {
+      "type": "combos",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "combo1": { "type": "combo" },
+        "combo2": { "type": "combo" },
+        "combo3": { "type": "combo" }
+      },
+      "block_order": ["combo1", "combo2", "combo3"]
+    },
+    "bundles": {
+      "type": "bundles",
+      "blocks": {
+        "tier1": { "type": "tier" },
+        "tier2": {
+          "type": "tier",
           "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
+            "tag": "Most popular",
+            "qty": "3",
+            "price": "₹499",
+            "compare_price": "₹897",
+            "featured": true
           }
         },
-        "button": {
-          "type": "buttons",
+        "tier3": {
+          "type": "tier",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "tag": "Whole home",
+            "qty": "5",
+            "price": "₹799",
+            "compare_price": "₹1495"
           }
         }
       },
-      "block_order": [
-        "heading",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
+      "block_order": ["tier1", "tier2", "tier3"]
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
+    "reviews_rail": {
+      "type": "reviews-rail",
+      "blocks": {
+        "review1": { "type": "review" },
+        "review2": { "type": "review" },
+        "review3": { "type": "review" }
+      },
+      "block_order": ["review1", "review2", "review3"]
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection"
+    "hero",
+    "shop_grid",
+    "combos",
+    "bundles",
+    "reviews_rail"
   ]
 }

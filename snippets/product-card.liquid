@@ -1,0 +1,19 @@
+<div class="product-card">
+  <a href="{{ product.url }}">
+    {% if product.featured_image %}
+      <img src="{{ product.featured_image | image_url: width: 400 }}" alt="{{ product.featured_image.alt | escape }}" loading="lazy">
+    {% else %}
+      <div class="no-image">No image</div>
+    {% endif %}
+    <h4>{{ product.title }}</h4>
+    {% if product.metafields.custom.key_ingredient != blank %}
+      <p class="ingredient">Made with {{ product.metafields.custom.key_ingredient }}</p>
+    {% endif %}
+    <div class="price">
+      <span class="current">{{ product.price | money }}</span>
+      {% if product.compare_at_price > product.price %}
+        <span class="compare">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+    </div>
+  </a>
+</div>

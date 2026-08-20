@@ -1,0 +1,108 @@
+.bundles {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bundles-head h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #17301f;
+  margin-bottom: 8px;
+}
+
+.bundles-head p {
+  color: #4a5c4f;
+  font-size: 15px;
+  margin: 0 0 28px 0;
+}
+
+.bundles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.bundle-tier {
+  background: #f6f4ef;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+}
+
+.bundle-tier.featured {
+  background: #1f5c3a;
+  color: #fff;
+}
+
+.bundle-tier .tag {
+  display: inline-block;
+  background: #e5e0d6;
+  color: #17301f;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.bundle-tier.featured .tag {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.bundle-tier .qty {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.bundle-tier .qty small {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.bundle-tier .price {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.bundle-tier .price s {
+  font-size: 15px;
+  opacity: 0.6;
+  margin-left: 6px;
+}
+
+.bundle-tier .per-item {
+  font-size: 13px;
+  opacity: 0.7;
+  margin: 0 0 20px 0;
+}
+
+.bundle-tier .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.bundle-tier .btn-ghost {
+  border: 1.5px solid #1f5c3a;
+  color: #1f5c3a;
+}
+
+.bundle-tier.featured .btn-primary {
+  background: #fff;
+  color: #1f5c3a;
+}
+
+@media (max-width: 768px) {
+  .bundles-grid {
+    grid-template-columns: 1fr;
+  }
+}
